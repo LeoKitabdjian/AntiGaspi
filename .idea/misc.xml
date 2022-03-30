@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/peyra/Documents/GitHub/AntiGaspi/app/src/main/res/layout/ajout_ingredient_frigo.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/peyra/Documents/GitHub/AntiGaspi/app/src/main/res/layout/astuce.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/peyra/Documents/GitHub/AntiGaspi/app/src/main/res/layout/modif_liste_ingredient.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/peyra/Documents/GitHub/AntiGaspi/app/src/main/res/layout/mon_frigo.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/peyra/Documents/GitHub/AntiGaspi/app/src/main/res/layout/recette.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/peyra/Documents/GitHub/AntiGaspi/app/src/main/res/layout/recette_magique.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/peyra/Documents/GitHub/AntiGaspi/app/src/main/res/layout/recherche_association.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/peyra/Documents/GitHub/AntiGaspi/app/src/main/res/layout/recherche_astuce.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
