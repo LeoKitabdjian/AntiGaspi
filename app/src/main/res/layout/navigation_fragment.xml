@@ -1,83 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:layout_alignParentBottom="true">
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="30dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal">
 
-    <RelativeLayout
+    <ImageButton
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/border">
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:background="@mipmap/map_icon"/>
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:background="@mipmap/tip_icon"/>
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:background="@mipmap/home_icon"/>
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:background="@mipmap/recette_icon"/>
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:background="@mipmap/fridge_icon"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <RelativeLayout
-                android:layout_width="20sp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.2">
-
-                <ImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/map_icon"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="20sp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.2">
-
-                <ImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/tip_icon"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="20sp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.2">
-
-                <ImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/home_icon" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="20sp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.2">
-
-                <ImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/recette_icon"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="20sp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.2">
-
-                <ImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/fridge_icon"/>
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-    </RelativeLayout>
-
-
-</RelativeLayout>
+</LinearLayout>
