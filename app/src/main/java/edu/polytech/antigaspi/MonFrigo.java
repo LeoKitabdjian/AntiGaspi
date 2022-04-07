@@ -14,11 +14,11 @@ public class MonFrigo extends AppCompatActivity {
         setContentView(R.layout.mon_frigo);
     }
 
-    Intent intent = new Intent(this, RecetteMagique.class);
-
-    Ingredient ingredient = new Ingredient("ingredient", 2);
-    intent.putExtra("ingredient", ingredient);
-
-    MonFrigo(intent) {
-    }
+//    Intent intent = new Intent(this, RecetteMagique.class);
+//
+//    Ingredient ingredient = new Ingredient("ingredient", 2);
+//    intent.putExtra("ingredient", ingredient);
+//
+//    MonFrigo(intent) {
+//    }
 }

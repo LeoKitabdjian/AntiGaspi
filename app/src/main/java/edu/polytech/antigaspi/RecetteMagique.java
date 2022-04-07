@@ -13,11 +13,11 @@ public class RecetteMagique extends AppCompatActivity {
         setContentView(R.layout.recette_magique);
     }
 
-    Intent intent = getIntent();
-    if (intent != null){
-        Ingredient ingredient = intent.getParcelableExtra("ingredient");
-        if (ingredient != null){
-
-        }
-    }
+//    Intent intent = getIntent();
+//    if (intent != null){
+//        Ingredient ingredient = intent.getParcelableExtra("ingredient");
+//        if (ingredient != null){
+//
+//        }
+//    }
 }
