@@ -18,7 +18,16 @@
             android:gravity="center"
             android:text="Home"/>
 
+
+
     </ScrollView>
+
+    <Button
+        android:id="@+id/btnAstuce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="click"
+        android:layout_centerInParent="true"/>
 
     <fragment
         android:id="@+id/navigFragment"
