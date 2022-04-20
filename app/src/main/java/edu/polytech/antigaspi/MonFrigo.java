@@ -6,12 +6,13 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MonFrigo extends AppCompatActivity {
+public class MonFrigo extends ActivitesPrincipales {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mon_frigo);
+        createLinks();
     }
 
 //    Intent intent = new Intent(this, RecetteMagique.class);
