@@ -34,10 +34,10 @@ public class RechercheAssociation extends AppCompatActivity {
         mapController.setCenter(startPoint);
 
         ArrayList<OverlayItem> items = new ArrayList<>();
-        OverlayItem home = new OverlayItem("point1","pos1",new GeoPoint(43.605221,7.062744));
+        OverlayItem home = new OverlayItem("Nom de l'association 1","Description de l'association 1",new GeoPoint(43.605221,7.062744));
         Drawable m = home.getMarker(0);
         items.add(home);
-        items.add(new OverlayItem("point2","pos2",new GeoPoint(43.625221,7.082744)));
+        items.add(new OverlayItem("Nom de l'association 2","Description de l'association 2",new GeoPoint(43.625221,7.082744)));
         ItemizedOverlayWithFocus<OverlayItem> mOverlay = new ItemizedOverlayWithFocus<OverlayItem>(getApplicationContext(),
                 items, new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
             @Override
