@@ -10,15 +10,17 @@
         android:layout_width="100dp"
         android:layout_height="30dp"
         android:text="MonFrigo"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="115dp"
         android:layout_height="91dp"
-        app:srcCompat="@mipmap/Banane"
+        app:srcCompat="@mipmap/banane"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="85dp" />
+        tools:layout_editor_absoluteY="85dp"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -26,7 +28,8 @@
         android:layout_height="42dp"
         app:srcCompat="@mipmap/fridge_icon"
         tools:layout_editor_absoluteX="368dp"
-        tools:layout_editor_absoluteY="0dp" />
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView2"
@@ -34,5 +37,6 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         tools:layout_editor_absoluteX="143dp"
-        tools:layout_editor_absoluteY="119dp" />
+        tools:layout_editor_absoluteY="119dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

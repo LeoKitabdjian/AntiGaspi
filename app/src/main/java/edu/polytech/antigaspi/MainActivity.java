@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btnAstuce).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Astuce.class);
+                Intent intent = new Intent(MainActivity.this, AjoutIngredientFrigo.class);
                 startActivity(intent);
             }
         });
