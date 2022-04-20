@@ -5,26 +5,31 @@
     android:orientation="horizontal">
 
     <ImageButton
+        android:id="@+id/navigation_bar_map"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="0.2"
         android:background="@mipmap/map_icon"/>
     <ImageButton
+        android:id="@+id/navigation_bar_astuces"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="0.2"
         android:background="@mipmap/tip_icon"/>
     <ImageButton
+        android:id="@+id/navigation_bar_home"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="0.2"
         android:background="@mipmap/home_icon"/>
     <ImageButton
+        android:id="@+id/navigation_bar_recette"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="0.2"
         android:background="@mipmap/recette_icon"/>
     <ImageButton
+        android:id="@+id/navigation_bar_frigo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="0.2"
