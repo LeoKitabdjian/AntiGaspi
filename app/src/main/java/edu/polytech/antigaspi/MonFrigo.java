@@ -1,10 +1,6 @@
 package edu.polytech.antigaspi;
 
-import edu.polytech.antigaspi.Ingredient;
-import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class MonFrigo extends ActivitesPrincipales {
 
