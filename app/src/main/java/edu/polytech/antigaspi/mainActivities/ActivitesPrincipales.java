@@ -1,8 +1,10 @@
-package edu.polytech.antigaspi;
+package edu.polytech.antigaspi.mainActivities;
 
 import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import edu.polytech.antigaspi.R;
 
 public abstract class ActivitesPrincipales extends AppCompatActivity {
 

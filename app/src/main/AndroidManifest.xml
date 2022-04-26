@@ -21,7 +21,7 @@
         android:theme="@style/Theme.AntiGaspi"
         tools:ignore="MissingClass">
         <activity
-            android:name=".MainActivity"
+            android:name=".mainActivities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,13 +30,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".AjoutIngredientFrigo" />
-        <activity android:name=".RechercheAstuce" />
+        <activity android:name=".mainActivities.RechercheAstuce" />
         <activity android:name=".Astuce" />
-        <activity android:name=".RecetteMagique" />
+        <activity android:name=".mainActivities.RecetteMagique" />
         <activity android:name=".Recette" />
         <activity android:name=".ModifListeIngredient" />
-        <activity android:name=".MonFrigo" />
-        <activity android:name=".RechercheAssociation" />
+        <activity android:name=".mainActivities.MonFrigo" />
+        <activity android:name=".mainActivities.RechercheAssociation" />
         <activity android:name=".PhotoIngredient" />
     </application>
 

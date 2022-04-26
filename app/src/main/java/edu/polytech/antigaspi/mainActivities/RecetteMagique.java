@@ -1,9 +1,8 @@
-package edu.polytech.antigaspi;
+package edu.polytech.antigaspi.mainActivities;
 
-import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
+import edu.polytech.antigaspi.R;
 
 public class RecetteMagique extends ActivitesPrincipales {
 

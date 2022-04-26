@@ -1,4 +1,4 @@
-package edu.polytech.antigaspi;
+package edu.polytech.antigaspi.fragments;
 
 import android.Manifest;
 import android.content.Intent;
@@ -16,6 +16,9 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import java.util.Objects;
+
+import edu.polytech.antigaspi.IPictureActivity;
+import edu.polytech.antigaspi.R;
 
 public class PhotoFragment extends Fragment {
     private ImageView imageView;

@@ -9,6 +9,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import edu.polytech.antigaspi.fragments.PhotoFragment;
+
 public class PhotoIngredient extends AppCompatActivity implements IPictureActivity {
     private Bitmap photo;
     private PhotoFragment photoFragment;

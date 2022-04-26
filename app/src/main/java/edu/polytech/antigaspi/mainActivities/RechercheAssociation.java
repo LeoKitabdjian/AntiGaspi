@@ -1,4 +1,4 @@
-package edu.polytech.antigaspi;
+package edu.polytech.antigaspi.mainActivities;
 
 import android.Manifest;
 import android.content.Context;
@@ -10,9 +10,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.preference.Preference;
 import androidx.preference.PreferenceManager;
 
 import org.osmdroid.api.IMapController;
@@ -25,6 +23,8 @@ import org.osmdroid.views.overlay.ItemizedOverlayWithFocus;
 import org.osmdroid.views.overlay.OverlayItem;
 
 import java.util.ArrayList;
+
+import edu.polytech.antigaspi.R;
 
 public class RechercheAssociation extends ActivitesPrincipales {
     private MapView map;

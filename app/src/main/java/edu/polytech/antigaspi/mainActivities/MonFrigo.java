@@ -1,6 +1,8 @@
-package edu.polytech.antigaspi;
+package edu.polytech.antigaspi.mainActivities;
 
 import android.os.Bundle;
+
+import edu.polytech.antigaspi.R;
 
 public class MonFrigo extends ActivitesPrincipales {
 

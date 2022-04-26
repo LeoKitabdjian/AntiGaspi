@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".mainActivities.MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -38,6 +38,6 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_weight="0"
-        android:name="edu.polytech.antigaspi.NavigationFragment"/>
+        android:name="edu.polytech.antigaspi.fragments.NavigationFragment"/>
 
 </LinearLayout>

@@ -57,5 +57,5 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_weight="0"
-        android:name="edu.polytech.antigaspi.NavigationFragment"/>
+        android:name="edu.polytech.antigaspi.fragments.NavigationFragment"/>
 </LinearLayout>
