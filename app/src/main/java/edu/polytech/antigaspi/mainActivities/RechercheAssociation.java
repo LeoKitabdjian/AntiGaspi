@@ -54,9 +54,9 @@ public class RechercheAssociation extends ActivitesPrincipales {
                         "\nHoraires :" +
                         "      8h - 12h, 14h - 18h",
                 new GeoPoint(43.579822,7.118646));
-        Drawable m = home.getMarker(0);
+        //Drawable m = home.getMarker(0);
         items.add(home);
-        items.add(new OverlayItem("Association Les Restos du Coeur",
+        items.add(new OverlayItem("Association Bras Ouvert",
                 "Adresse :\n" +
                         "7 Boulevard Maurice Rouvier\n" +
                         "06220, Vallauris" +
@@ -65,6 +65,15 @@ public class RechercheAssociation extends ActivitesPrincipales {
                         "\nHoraires :" +
                         "   9h - 12h, 13h - 17h",
                 new GeoPoint(43.578440,7.054838)));
+        items.add(new OverlayItem("Association Banque Alimentaire",
+                "Adresse :\n" +
+                        "2 Chemin des Écoles Lingostière\n" +
+                        "06200, Nice" +
+                        "\nNuméro de téléphone :\n" +
+                        "04 92 10 05 31\n" +
+                        "\nHoraires :" +
+                        "   7h - 13h, 15h - 19h",
+                new GeoPoint(43.716007,7.187486)));
         ItemizedOverlayWithFocus<OverlayItem> mOverlay = new ItemizedOverlayWithFocus<OverlayItem>(getApplicationContext(),
                 items, new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
             @Override
