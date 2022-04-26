@@ -38,6 +38,7 @@
         <activity android:name=".mainActivities.MonFrigo" />
         <activity android:name=".mainActivities.RechercheAssociation" />
         <activity android:name=".PhotoIngredient" />
+        <activity android:name=".TipActivity" />
     </application>
 
 </manifest>
