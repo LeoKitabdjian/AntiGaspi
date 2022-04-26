@@ -45,25 +45,26 @@ public class RechercheAssociation extends ActivitesPrincipales {
         mapController.setCenter(startPoint);
         handleStartPoint(mapController);
         ArrayList<OverlayItem> items = new ArrayList<>();
-        OverlayItem home = new OverlayItem("Association La Croix Rouge",
+        OverlayItem home = new OverlayItem("Association Coup de Pouce",
                 "Adresse :\n" +
-                        "75 Route des Dollines\n" +
-                        "06410, Biot\n" +
+                        "10 Rue du Directeur Chaudon\n" +
+                        "06600, Antibes\n" +
                         "        Numéro de téléphone :\n" +
-                        "04 21 22 23 24\n" +
+                        "04 93 61 82 04\n" +
                         "\nHoraires :" +
-                        "      10h - 13h, 15h - 18h",new GeoPoint(43.605221,7.062744));
+                        "      8h - 12h, 14h - 18h",
+                new GeoPoint(43.579822,7.118646));
         Drawable m = home.getMarker(0);
         items.add(home);
         items.add(new OverlayItem("Association Les Restos du Coeur",
                 "Adresse :\n" +
-                        "5 Rue de la Condamine\n" +
-                        "06560, Valbonne" +
+                        "7 Boulevard Maurice Rouvier\n" +
+                        "06220, Vallauris" +
                         "\nNuméro de téléphone :\n" +
-                        "04 10 11 12 13\n" +
+                        "09 72 44 30 45\n" +
                         "\nHoraires :" +
-                        "   9h - 12h, 14h - 19h",
-                new GeoPoint(43.625221,7.082744)));
+                        "   9h - 12h, 13h - 17h",
+                new GeoPoint(43.578440,7.054838)));
         ItemizedOverlayWithFocus<OverlayItem> mOverlay = new ItemizedOverlayWithFocus<OverlayItem>(getApplicationContext(),
                 items, new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
             @Override
