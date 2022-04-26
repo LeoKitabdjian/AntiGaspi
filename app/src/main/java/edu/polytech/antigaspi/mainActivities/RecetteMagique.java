@@ -13,11 +13,5 @@ public class RecetteMagique extends ActivitesPrincipales {
         createLinks();
     }
 
-//    Intent intent = getIntent();
-//    if (intent != null){
-//        Ingredient ingredient = intent.getParcelableExtra("ingredient");
-//        if (ingredient != null){
-//
-//        }
-//    }
+
 }

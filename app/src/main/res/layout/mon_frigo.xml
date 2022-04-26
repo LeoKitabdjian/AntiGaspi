@@ -24,13 +24,6 @@
                 android:text="MonFrigo"
                 android:textSize="20sp" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="115dp"
-                android:layout_height="91dp"
-                app:srcCompat="@mipmap/banane"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="85dp" />
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -40,15 +33,50 @@
                 tools:layout_editor_absoluteX="368dp"
                 tools:layout_editor_absoluteY="0dp" />
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView"
-                tools:layout_editor_absoluteX="143dp"
-                tools:layout_editor_absoluteY="119dp" />
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="#4CAF50"
+                android:text="Count:0"
+                android:textColor="@android:color/background_light"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="#4CAF50"
+                android:text="Count:0"
+                android:textColor="@android:color/background_light"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="#4CAF50"
+                android:text="Count:0"
+                android:textColor="@android:color/background_light"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
+
 
     </ScrollView>
 
