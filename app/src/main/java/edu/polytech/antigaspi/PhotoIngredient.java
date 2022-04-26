@@ -53,7 +53,10 @@ public class PhotoIngredient extends AppCompatActivity implements IPictureActivi
         if(requestCode==REQUEST_CAMERA){
             if (resultCode==RESULT_OK){
                 photo=(Bitmap) data.getExtras().get("data");
-                photoFragment.setImage(photo);}
+                photoFragment.setImage(photo);
+                Intent intent = new Intent(PhotoIngredient.this, AjoutIngredientFrigo.class);
+                intent.putExtra("date","14/05/2022");
+                startActivity(intent);}
             else if(resultCode==RESULT_CANCELED){
                 Toast toast = Toast.makeText(getApplicationContext(), "photo annulée", Toast.LENGTH_LONG);
                 toast.show();
