@@ -7,7 +7,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.View;
 
-import edu.polytech.antigaspi.AjoutIngredientFrigo;
+import edu.polytech.antigaspi.Astuce;
 import edu.polytech.antigaspi.R;
 
 public class MainActivity extends ActivitesPrincipales {
@@ -17,10 +17,16 @@ public class MainActivity extends ActivitesPrincipales {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        createLinks();
+        createLinks(R.mipmap.home_icon, "Accueil");
         requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 0);
         handleGPS();
-
+        findViewById(R.id.notif).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Astuce.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void handleGPS() {
