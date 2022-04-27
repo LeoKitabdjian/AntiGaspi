@@ -6,6 +6,34 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+
+    <fragment
+        android:id="@+id/headerFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="edu.polytech.antigaspi.fragments.HeaderFragment"/>
+
+    <TextView
+        android:layout_width="50sp"
+        android:layout_height="match_parent"
+        android:text="Notifs"
+        android:layout_marginStart="300sp"
+        android:gravity="center_vertical"
+        android:textColor="@color/black"
+        android:textSize="18sp"/>
+
+    <Switch
+        android:id="@+id/switchNotifs"
+        android:layout_width="50sp"
+        android:layout_marginStart="350sp"
+        android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="500dp"

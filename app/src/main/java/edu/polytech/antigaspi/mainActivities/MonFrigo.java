@@ -1,15 +1,25 @@
 package edu.polytech.antigaspi.mainActivities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+
+import androidx.annotation.Nullable;
+
+import java.util.Map;
 import android.widget.TextView;
 
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Set;
 
 import edu.polytech.antigaspi.AjoutIngredientFrigo;
+import edu.polytech.antigaspi.GlobalParams;
 import edu.polytech.antigaspi.QuantiteIngredient;
 import edu.polytech.antigaspi.R;
 
@@ -22,12 +32,25 @@ public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnC
     private Button Button2;
     private TextView Quantity;
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mon_frigo);
         createLinks();
+
+        ((Switch)findViewById(R.id.switchNotifs)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                GlobalParams.NOTIFS = b;
+                Log.i("Notifs", String.valueOf(b));
+            }
+        });
 
         quantiteIngredient = new QuantiteIngredient();
         quantiteIngredient.addObserver(this);
