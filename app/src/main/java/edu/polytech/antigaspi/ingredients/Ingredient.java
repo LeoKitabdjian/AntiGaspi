@@ -27,4 +27,9 @@ public abstract class Ingredient implements Parcelable {
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(nom);
     }
+
+    @Override
+    public String toString() {
+        return nom;
+    }
 }

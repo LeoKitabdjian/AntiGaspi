@@ -8,12 +8,12 @@ import edu.polytech.antigaspi.recipes.SweetRecipe;
 
 public class SweetFactory extends AbstractFactory{
     @Override
-    Ingredient buildIngredient(String nom) {
+    public Ingredient buildIngredient(String nom) {
         return new SweetIngredient(nom);
     }
 
     @Override
-    Recipe buildRecipe(RecipeComponent[] recipeComponent) {
+    public Recipe buildRecipe(RecipeComponent[] recipeComponent) {
         return new SweetRecipe(recipeComponent);
     }
 }

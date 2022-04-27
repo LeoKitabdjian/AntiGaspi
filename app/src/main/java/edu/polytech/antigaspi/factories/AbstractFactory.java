@@ -6,7 +6,7 @@ import edu.polytech.antigaspi.recipes.RecipeComponent;
 
 public abstract class AbstractFactory {
 
-    abstract Ingredient buildIngredient(String nom);
-    abstract Recipe buildRecipe(RecipeComponent[] recipeComponent);
+    public abstract Ingredient buildIngredient(String nom);
+    public abstract Recipe buildRecipe(RecipeComponent[] recipeComponent);
 
 }

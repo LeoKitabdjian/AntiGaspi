@@ -49,7 +49,7 @@ public class TipsAdapter extends BaseAdapter {
         TextView tvName2 = layoutItem.findViewById(R.id.ContenuTip);
 
         //(3) : Renseignement des valeurs
-        tvName.setText(tips.get(position).getIngredientName());
+        tvName.setText(tips.get(position).getIngredient().toString());
         tvName2.setText(tips.get(position).getContenuTip());
 
         //(4) Changement de la couleur du fond de notre item

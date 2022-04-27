@@ -21,7 +21,7 @@ public class TipActivity extends ActivitesPrincipales {
         createLinks();
 
         tip = getIntent().getParcelableExtra(TIP);
-        ((TextView)findViewById( R.id.IngredientName)).setText(tip.getIngredientName());
+        ((TextView)findViewById( R.id.IngredientName)).setText(tip.getIngredient().toString());
         ((TextView)findViewById( R.id.ContenuTip)).setText(tip.getContenuTip());
 
         ((Button)findViewById(R.id.button)).setOnClickListener( click -> {

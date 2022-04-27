@@ -3,17 +3,20 @@ package edu.polytech.antigaspi;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import edu.polytech.antigaspi.ingredients.Ingredient;
+import edu.polytech.antigaspi.ingredients.SaltIngredient;
+
 public class Tip implements Parcelable {
-    private String IngredientName;
+    private Ingredient ingredient;
     private String ContenuTip;
 
-    public Tip(String IngredientName, String ContenuTip) {
-        this.IngredientName = IngredientName;
+    public Tip(Ingredient IngredientName, String ContenuTip) {
+        this.ingredient = IngredientName;
         this.ContenuTip = ContenuTip;
     }
 
     protected Tip(Parcel in) {
-        IngredientName = in.readString();
+        ingredient = new SaltIngredient(in.readString());
         ContenuTip = in.readString();
     }
 
@@ -29,8 +32,8 @@ public class Tip implements Parcelable {
         }
     };
 
-    public String getIngredientName() {
-        return IngredientName;
+    public Ingredient getIngredient() {
+        return ingredient;
     }
 
     public String getContenuTip() {
@@ -44,7 +47,7 @@ public class Tip implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(IngredientName);
+        dest.writeString(ingredient.toString());
         dest.writeString(ContenuTip);
     }
 }
