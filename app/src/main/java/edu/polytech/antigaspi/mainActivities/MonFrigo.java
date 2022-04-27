@@ -42,7 +42,7 @@ public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mon_frigo);
-        createLinks();
+        createLinks(R.mipmap.fridge_icon, "Mon Frigo");
 
         ((Switch)findViewById(R.id.switchNotifs)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
