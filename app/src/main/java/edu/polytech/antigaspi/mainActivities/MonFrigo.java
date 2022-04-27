@@ -1,11 +1,13 @@
 package edu.polytech.antigaspi.mainActivities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import java.util.Observable;
 import java.util.Observer;
 
+import edu.polytech.antigaspi.AjoutIngredientFrigo;
 import edu.polytech.antigaspi.QuantiteIngredient;
 import edu.polytech.antigaspi.R;
 
@@ -38,6 +40,8 @@ public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnC
         Button2.setOnClickListener(this);
         Button3.setOnClickListener(this);
 
+        findViewById(R.id.btnAjoutIngredient).setOnClickListener(this);
+
     }
 
     @Override
@@ -55,6 +59,10 @@ public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnC
 
             case R.id.button3:
                 quantiteIngredient.setValueAtIndex(2);
+                break;
+            case R.id.btnAjoutIngredient:
+                Intent intent = new Intent(MonFrigo.this, AjoutIngredientFrigo.class);
+                startActivity(intent);
                 break;
         }
     }

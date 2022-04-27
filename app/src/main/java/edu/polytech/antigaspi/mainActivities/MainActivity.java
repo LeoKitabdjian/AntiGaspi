@@ -20,13 +20,7 @@ public class MainActivity extends ActivitesPrincipales {
         createLinks();
         requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 0);
         handleGPS();
-        findViewById(R.id.btnAstuce).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, AjoutIngredientFrigo.class);
-                startActivity(intent);
-            }
-        });
+
     }
 
     private void handleGPS() {
