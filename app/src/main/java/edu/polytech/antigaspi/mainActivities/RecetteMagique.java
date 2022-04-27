@@ -10,7 +10,7 @@ public class RecetteMagique extends ActivitesPrincipales {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recette_magique);
-        createLinks();
+        createLinks(R.mipmap.recette_icon, "Recette magique");
     }
 
 

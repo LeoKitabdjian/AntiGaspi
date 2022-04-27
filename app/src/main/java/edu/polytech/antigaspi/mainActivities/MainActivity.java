@@ -17,7 +17,7 @@ public class MainActivity extends ActivitesPrincipales {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        createLinks();
+        createLinks(R.mipmap.home_icon, "Accueil");
         requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 0);
         handleGPS();
         findViewById(R.id.notif).setOnClickListener(new View.OnClickListener() {

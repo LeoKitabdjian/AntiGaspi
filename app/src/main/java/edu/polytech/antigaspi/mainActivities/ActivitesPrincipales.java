@@ -1,12 +1,20 @@
 package edu.polytech.antigaspi.mainActivities;
 
 import android.content.Intent;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import edu.polytech.antigaspi.R;
 
 public abstract class ActivitesPrincipales extends AppCompatActivity {
+
+    public void createLinks(int image, String text) {
+        createLinks();
+        ((TextView)findViewById(R.id.header_text)).setText(text);
+        ((ImageView)findViewById(R.id.header_image)).setImageResource(image);
+    }
 
     public void createLinks() {
         findViewById(R.id.navigation_bar_frigo).setOnClickListener(view -> {
@@ -30,5 +38,4 @@ public abstract class ActivitesPrincipales extends AppCompatActivity {
             startActivity(intent);
         });
     }
-
 }

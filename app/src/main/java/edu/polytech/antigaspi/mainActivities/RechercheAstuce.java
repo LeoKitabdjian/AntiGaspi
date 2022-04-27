@@ -20,7 +20,7 @@ public class RechercheAstuce extends ActivitesPrincipales implements IListner {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recherche_astuce);
-        createLinks();
+        createLinks(R.mipmap.tip_icon, "Recherche d'astuces");
         Tips tips = new Tips();
 
         //Création et initialisation de l'Adapter pour les tip

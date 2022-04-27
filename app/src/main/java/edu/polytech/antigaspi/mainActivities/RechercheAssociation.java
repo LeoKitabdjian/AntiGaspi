@@ -34,7 +34,7 @@ public class RechercheAssociation extends ActivitesPrincipales {
         super.onCreate(savedInstanceState);
         Configuration.getInstance().load(getApplicationContext(), PreferenceManager.getDefaultSharedPreferences(getApplicationContext()));
         setContentView(R.layout.recherche_association);
-        createLinks();
+        createLinks(R.mipmap.map_icon, "Recherche d'associations");
         map = findViewById(R.id.map);
         map.setTileSource(TileSourceFactory.MAPNIK);
         map.setBuiltInZoomControls(true);
