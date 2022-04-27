@@ -23,10 +23,17 @@ public class QuantiteIngredient extends Observable {
 
     // function to make changes in the activity button's
     // count value when user touch it
-    public void setValueAtIndex(final int the_index) throws IndexOutOfBoundsException{
+    public void setValuePlus1(final int the_index) throws IndexOutOfBoundsException{
         List.set(the_index,List.get(the_index) + 1);
         setChanged();
         notifyObservers();
+    }
+    public void setValueMinus1(final int the_index) throws IndexOutOfBoundsException {
+        if (List.get(the_index)>0){
+            List.set(the_index, List.get(the_index) - 1);
+            setChanged();
+            notifyObservers();
+        }
     }
 
 }

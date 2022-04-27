@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
 import java.util.Observable;
 import java.util.Observer;
 
@@ -18,14 +20,14 @@ public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnC
 
     private Button Button1;
     private Button Button2;
-    private Button Button3;
+    private TextView Quantity;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mon_frigo);
-        createLinks(R.mipmap.fridge_icon, "Mon Frigo");
+        createLinks();
 
         quantiteIngredient = new QuantiteIngredient();
         quantiteIngredient.addObserver(this);
@@ -33,12 +35,11 @@ public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnC
 
         Button1 = findViewById(R.id.button);
         Button2 = findViewById(R.id.button2);
-        Button3 = findViewById(R.id.button3);
+        Quantity = findViewById(R.id.quantity);
 
 
         Button1.setOnClickListener(this);
         Button2.setOnClickListener(this);
-        Button3.setOnClickListener(this);
 
         findViewById(R.id.btnAjoutIngredient).setOnClickListener(this);
 
@@ -50,15 +51,11 @@ public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnC
         switch(v.getId()){
 
             case R.id.button:
-                quantiteIngredient.setValueAtIndex(0);
+                quantiteIngredient.setValuePlus1(0);
                 break;
 
             case R.id.button2:
-                quantiteIngredient.setValueAtIndex(1);
-                break;
-
-            case R.id.button3:
-                quantiteIngredient.setValueAtIndex(2);
+                quantiteIngredient.setValueMinus1(0);
                 break;
             case R.id.btnAjoutIngredient:
                 Intent intent = new Intent(MonFrigo.this, AjoutIngredientFrigo.class);
@@ -71,10 +68,7 @@ public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnC
 
     public void update(Observable arg0, Object arg1) {
 
-        Button1.setText("Count: "+quantiteIngredient.getValueAtIndex(0));
-        Button2.setText("Count: "+quantiteIngredient.getValueAtIndex(1));
-        Button3.setText("Count: "+quantiteIngredient.getValueAtIndex(2));
+        Quantity.setText("Quantity : "+quantiteIngredient.getValueAtIndex(0));
 
     }
 }
-
