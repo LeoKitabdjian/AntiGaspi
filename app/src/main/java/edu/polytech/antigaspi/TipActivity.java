@@ -8,14 +8,17 @@ import android.widget.TextView;
 
 import static edu.polytech.antigaspi.ApplicationTip.TIP;
 
+import edu.polytech.antigaspi.mainActivities.ActivitesPrincipales;
 
-public class TipActivity extends AppCompatActivity {
+
+public class TipActivity extends ActivitesPrincipales {
     private Tip tip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tip);
+        createLinks();
 
         tip = getIntent().getParcelableExtra(TIP);
         ((TextView)findViewById( R.id.IngredientName)).setText(tip.getIngredientName());
