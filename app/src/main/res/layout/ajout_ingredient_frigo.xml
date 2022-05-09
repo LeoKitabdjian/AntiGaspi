@@ -74,7 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="56dp"
-        android:text="TextView"
+        android:text="Date de peremption"
         app:layout_constraintBottom_toBottomOf="@+id/DateP"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="TextView"
+        android:text="Quantité"
         app:layout_constraintBottom_toTopOf="@+id/NumQuantite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.529"
@@ -126,7 +126,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="hint"
+            android:hint="Nom de l'ingrédient"
             android:visibility="visible" />
     </com.google.android.material.textfield.TextInputLayout>
 
