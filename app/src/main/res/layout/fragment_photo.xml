@@ -12,20 +12,21 @@
     <TextView
         android:id="@+id/Info"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="30dp"
         android:layout_weight="1"
         android:text="Take a picture!"
         android:gravity="center"
         android:textSize="20sp"
+        android:textColor="@color/white"
         />
+
     <ImageView
         android:id="@+id/photo"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="50"
-        android:src="@drawable/dlc"
+        android:layout_height="441dp"
         android:layout_marginTop="10dp"
-        />
+        android:layout_weight="50"
+        android:src="@drawable/dlc" />
     <Button
         android:id="@+id/buttonImage"
         android:layout_width="wrap_content"

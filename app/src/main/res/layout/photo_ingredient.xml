@@ -6,11 +6,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".PhotoIngredient">
+
     <fragment
         android:id="@+id/photoFragment"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:layout_marginBottom="20dp"
         android:layout_marginTop="50dp"
         android:name="edu.polytech.antigaspi.fragments.PhotoFragment"/>
 
