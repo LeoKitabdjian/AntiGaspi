@@ -10,7 +10,7 @@ import java.util.Objects;
 
 public class Notification extends Application {
 
-    static final String CHANNEL_1_ID = "channel LOW";
+    public static final String CHANNEL_1_ID = "channel LOW";
     private static NotificationManager notificationManager;
 
     private NotificationChannel createNotificationChannel(String channelId, CharSequence name, int importance, String channelDescription) {

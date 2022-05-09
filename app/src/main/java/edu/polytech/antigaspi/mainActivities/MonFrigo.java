@@ -1,7 +1,10 @@
 package edu.polytech.antigaspi.mainActivities;
 
+
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,6 +13,8 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 
 import androidx.annotation.Nullable;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import java.util.Map;
 import android.widget.TextView;
@@ -23,14 +28,17 @@ import edu.polytech.antigaspi.GlobalParams;
 import edu.polytech.antigaspi.QuantiteIngredient;
 import edu.polytech.antigaspi.R;
 
+import static edu.polytech.antigaspi.Notification.CHANNEL_1_ID;
+
 public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnClickListener {
 
     private QuantiteIngredient quantiteIngredient;
-
+    private int notificationId=0;
 
     private Button Button1;
     private Button Button2;
     private TextView Quantity;
+    private Boolean activate;
 
     @Override
     protected void onPause() {
@@ -43,12 +51,23 @@ public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mon_frigo);
         createLinks(R.mipmap.fridge_icon, "Mon Frigo");
-
+        activate=false;
         ((Switch)findViewById(R.id.switchNotifs)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                activate=!activate;
                 GlobalParams.NOTIFS = b;
-                Log.i("Notifs", String.valueOf(b));
+                String title="";
+                String message="";
+                if(activate) {
+                    title = "Notification activée";
+                    message = "Vous avez maintenant activé les notificaitons";
+                }
+                else{
+                    title = "Notification desactivée";
+                    message = "Vous avez maintenant désactivé les notificaitons";
+                }
+                sendNotificationOnChannel(title, message, CHANNEL_1_ID, NotificationCompat.PRIORITY_LOW);
             }
         });
 
@@ -94,4 +113,17 @@ public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnC
         Quantity.setText("Quantity : "+quantiteIngredient.getValueAtIndex(0));
 
     }
+    private void sendNotificationOnChannel(String title, String content, String channelId, int priority) {
+        Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.notif);
+        NotificationCompat.Builder notification = new NotificationCompat.Builder(this, channelId)
+                .setContentTitle(title)
+                .setContentText("id=" + ++notificationId + " - " + content)
+                .setPriority(priority)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .setStyle(new NotificationCompat.BigPictureStyle().bigPicture(bitmap)) ;
+
+        notification.setSmallIcon( R.drawable.channel3 );
+        NotificationManagerCompat.from(this).notify( notificationId, notification.build() );
+    }
+
 }
