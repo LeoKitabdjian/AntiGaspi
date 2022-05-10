@@ -9,89 +9,56 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_weight="0">
 
-    <fragment
-        android:id="@+id/headerFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:name="edu.polytech.antigaspi.fragments.HeaderFragment"/>
+        <fragment
+            android:id="@+id/headerFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="edu.polytech.antigaspi.fragments.HeaderFragment"/>
 
-    <TextView
-        android:layout_width="50sp"
-        android:layout_height="match_parent"
-        android:text="Notifs"
-        android:layout_marginStart="300sp"
-        android:gravity="center_vertical"
-        android:textColor="@color/black"
-        android:textSize="18sp"/>
+        <TextView
+            android:layout_width="50sp"
+            android:layout_height="match_parent"
+            android:text="Notifs"
+            android:layout_marginStart="300sp"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
 
-    <Switch
-        android:id="@+id/switchNotifs"
-        android:layout_width="50sp"
-        android:layout_marginStart="350sp"
-        android:layout_height="match_parent" />
+        <Switch
+            android:id="@+id/switchNotifs"
+            android:layout_width="50sp"
+            android:layout_marginStart="350sp"
+            android:layout_height="match_parent" />
 
     </RelativeLayout>
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_weight="1"
-        android:gravity="center">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
 
-        <LinearLayout
+        <ListView
+            android:id="@+id/componentsList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="15sp"
+            android:layout_weight="1"/>
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="300dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="20dp"
-                android:background="#4CAF50"
-                android:text="+"
-                android:textColor="@android:color/background_light"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+        <Button
+            android:id="@+id/btnAjoutIngredient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Ajouter un ingrédient"
+            android:layout_weight="0"/>
 
-            <TextView
-                android:id="@+id/quantity"
-                android:layout_width="130dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="150dp"
-                android:layout_marginEnd="20dp"
-                android:text="Quantity : 0"
-                android:textSize="20sp" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="300dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="20dp"
-                android:background="#4CAF50"
-                android:text="-"
-                android:textColor="@android:color/background_light"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/btnAjoutIngredient"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Ajouter un ingrédient" />
-
-        </LinearLayout>
-
-
-    </ScrollView>
+    </LinearLayout>
 
     <fragment
         android:id="@+id/navigFragment"

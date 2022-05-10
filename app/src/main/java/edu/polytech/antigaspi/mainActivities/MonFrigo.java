@@ -13,8 +13,11 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ListView;
 import android.widget.Switch;
 
 import androidx.annotation.Nullable;
@@ -33,6 +36,7 @@ import edu.polytech.antigaspi.AjoutIngredientFrigo;
 import edu.polytech.antigaspi.GlobalParams;
 import edu.polytech.antigaspi.QuantiteIngredient;
 import edu.polytech.antigaspi.R;
+import edu.polytech.antigaspi.RecipeComponentAdapter;
 
 import static edu.polytech.antigaspi.Notification.CHANNEL_1_ID;
 
@@ -60,6 +64,28 @@ public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnC
         setContentView(R.layout.mon_frigo);
         prefs = this.getSharedPreferences("fridge", Context.MODE_PRIVATE);
         createLinks(R.mipmap.fridge_icon, "Mon Frigo");
+        handleNotifs();
+
+        quantiteIngredient = new QuantiteIngredient();
+        quantiteIngredient.addObserver(this);
+
+        ListView list = findViewById(R.id.componentsList);
+
+        list.setAdapter(new RecipeComponentAdapter(this));
+
+        /*Button1 = findViewById(R.id.button);
+        Button2 = findViewById(R.id.button2);
+        Quantity = findViewById(R.id.quantity);
+
+
+        Button1.setOnClickListener(this);
+        Button2.setOnClickListener(this);*/
+
+        findViewById(R.id.btnAjoutIngredient).setOnClickListener(this);
+
+    }
+
+    private void handleNotifs() {
         ((Switch)findViewById(R.id.switchNotifs)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -83,21 +109,6 @@ public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnC
                 handler.postDelayed(() -> cancelNotification(getApplicationContext(), toCancel), 5000);
             }
         });
-
-        quantiteIngredient = new QuantiteIngredient();
-        quantiteIngredient.addObserver(this);
-
-
-        Button1 = findViewById(R.id.button);
-        Button2 = findViewById(R.id.button2);
-        Quantity = findViewById(R.id.quantity);
-
-
-        Button1.setOnClickListener(this);
-        Button2.setOnClickListener(this);
-
-        findViewById(R.id.btnAjoutIngredient).setOnClickListener(this);
-
     }
 
     @Override
@@ -105,7 +116,7 @@ public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnC
     public void onClick(View v) {
         switch(v.getId()){
 
-            case R.id.button:
+            /*case R.id.button:
                 quantiteIngredient.setValuePlus1(0);
                 break;
 
@@ -129,7 +140,7 @@ public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnC
                     AlertDialog alert = builder.create();
                     alert.show();
                 }
-                break;
+                break;*/
             case R.id.btnAjoutIngredient:
                 Intent intent = new Intent(MonFrigo.this, AjoutIngredientFrigo.class);
                 startActivity(intent);

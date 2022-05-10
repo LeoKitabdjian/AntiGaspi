@@ -20,8 +20,8 @@
 
         <SearchView
             android:id="@+id/recherche_ingredient"
-            android:layout_width="315dp"
-            android:layout_height="55dp"
+            android:layout_width="match_parent"
+            android:layout_height="55sp"
             app:layout_constraintBottom_toTopOf="@+id/list_ingredient"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
