@@ -24,19 +24,6 @@ public class QuantiteIngredient extends Observable {
         return list.get(the_index).getQuantite();
     }
 
-    // function to make changes in the activity button's
-    // count value when user touch it
-    public void setValuePlus1(final int the_index) throws IndexOutOfBoundsException{
-        list.get(the_index).setQuantite(list.get(the_index).getQuantite()+1);
-        setChanged();
-        notifyObservers();
-    }
-    public void setValueMinus1(final int the_index) throws IndexOutOfBoundsException {
-        if (list.get(the_index).getQuantite()>1){
-            list.get(the_index).setQuantite(list.get(the_index).getQuantite()-1);
-            setChanged();
-            notifyObservers();
-        }
-    }
+
 
 }

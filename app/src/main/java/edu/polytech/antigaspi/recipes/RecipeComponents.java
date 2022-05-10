@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import edu.polytech.antigaspi.factories.SaltFactory;
 import edu.polytech.antigaspi.factories.SweetFactory;
 
-public class RecipeComponents  extends ArrayList<RecipeComponent> {
+public class RecipeComponents extends ArrayList<RecipeComponent> {
     private static RecipeComponents recipeComponents;
 
     private RecipeComponents(){

@@ -55,7 +55,9 @@ public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnC
     protected void onResume() {
         super.onResume();
         boolean activated = retrieveNotifs();
+        disableNotifs();
         ((Switch) findViewById(R.id.switchNotifs)).setChecked(activated);
+        handleNotifs();
     }
 
     @Override
@@ -83,6 +85,15 @@ public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnC
 
         findViewById(R.id.btnAjoutIngredient).setOnClickListener(this);
 
+    }
+
+    private void disableNotifs() {
+        ((Switch)findViewById(R.id.switchNotifs)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+            }
+        });
     }
 
     private void handleNotifs() {
@@ -149,7 +160,6 @@ public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnC
     }
 
     @Override
-
     public void update(Observable arg0, Object arg1) {
 
         Quantity.setText("Quantity : "+quantiteIngredient.getValueAtIndex(0));
