@@ -85,8 +85,8 @@
                 android:id="@+id/btnAjoutIngredient"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ajouter un ingrédient"
-                android:layout_centerInParent="true"/>
+                android:layout_gravity="center"
+                android:text="Ajouter un ingrédient" />
 
         </LinearLayout>
 
