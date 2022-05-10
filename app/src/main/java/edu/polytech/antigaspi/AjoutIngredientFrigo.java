@@ -73,7 +73,7 @@ public class AjoutIngredientFrigo extends AppCompatActivity {
                         intent.putExtra("allDay", true);
                         intent.putExtra("rule", "FREQ=YEARLY");
                         intent.putExtra("endTime", time+60*60*1000);
-                        intent.putExtra("title", "A Test Event from android app");
+                        intent.putExtra("title", "Date de péremption de : " + name.getText());
                         startActivity(intent);
                     }
                 };
