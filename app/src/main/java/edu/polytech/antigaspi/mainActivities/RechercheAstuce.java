@@ -21,10 +21,9 @@ public class RechercheAstuce extends ActivitesPrincipales implements IListner {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recherche_astuce);
         createLinks(R.mipmap.tip_icon, "Recherche d'astuces");
-        Tips tips = new Tips();
 
         //Création et initialisation de l'Adapter pour les tip
-        TipsAdapter adapter = new TipsAdapter(getApplicationContext(), tips);
+        TipsAdapter adapter = new TipsAdapter(getApplicationContext(), Tips.getInstance());
 
         //Récupération du composant ListView
         ListView list = findViewById(R.id.listView);

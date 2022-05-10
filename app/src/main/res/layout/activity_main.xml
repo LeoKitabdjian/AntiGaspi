@@ -42,6 +42,33 @@
 
             </LinearLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Astuce du jour"
+                android:layout_marginTop="50sp"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:layout_marginLeft="20sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Pourquoi pas apprendre quelque chose sur : "
+                android:layout_marginTop="20sp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginLeft="20sp"/>
+
+            <TextView
+                android:id="@+id/todayTip"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2sp"
+                android:textColor="@color/teal_700"
+                android:textSize="15sp"
+                android:layout_marginLeft="20sp"/>
+
         </LinearLayout>
 
     </ScrollView>
