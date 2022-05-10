@@ -2,9 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    tools:context=".mainActivities.MainActivity">
+    android:orientation="vertical">
 
     <fragment
         android:id="@+id/headerFragment"
@@ -22,6 +20,39 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="300dp"
+                android:layout_marginEnd="20dp"
+                android:background="#4CAF50"
+                android:text="+"
+                android:textColor="@android:color/background_light"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nbpers"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginStart="150dp"
+                android:text="NbPersonne : 0"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="300dp"
+                android:layout_marginEnd="20dp"
+                android:background="#4CAF50"
+                android:text="-"
+                android:textColor="@android:color/background_light"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
 
         </LinearLayout>
 

@@ -43,7 +43,7 @@ import edu.polytech.antigaspi.recipes.RecipeComponents;
 
 import static edu.polytech.antigaspi.Notification.CHANNEL_1_ID;
 
-import com.google.gson.Gson;
+//import com.google.gson.Gson;
 
 public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnClickListener {
 

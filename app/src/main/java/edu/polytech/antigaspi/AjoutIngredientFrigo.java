@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.google.gson.Gson;
+//import com.google.gson.Gson;
 
 import edu.polytech.antigaspi.fragments.PhotoFragment;
 import edu.polytech.antigaspi.ingredients.SaltIngredient;
