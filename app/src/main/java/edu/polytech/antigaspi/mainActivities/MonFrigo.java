@@ -1,11 +1,15 @@
 package edu.polytech.antigaspi.mainActivities;
 
 
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -39,27 +43,28 @@ public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnC
     private Button Button2;
     private TextView Quantity;
     private Boolean activate;
+    SharedPreferences prefs;
 
     @Override
-    protected void onPause() {
-        super.onPause();
-        
+    protected void onResume() {
+        super.onResume();
+        boolean activated = retrieveNotifs();
+        ((Switch) findViewById(R.id.switchNotifs)).setChecked(activated);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mon_frigo);
+        prefs = this.getSharedPreferences("fridge", Context.MODE_PRIVATE);
         createLinks(R.mipmap.fridge_icon, "Mon Frigo");
-        activate=false;
         ((Switch)findViewById(R.id.switchNotifs)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                activate=!activate;
-                GlobalParams.NOTIFS = b;
+                setNotifs(b);
                 String title="";
                 String message="";
-                if(activate) {
+                if(retrieveNotifs()) {
                     title = "Notification activée";
                     message = "Vous avez maintenant activé les notificaitons";
                 }
@@ -67,7 +72,13 @@ public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnC
                     title = "Notification desactivée";
                     message = "Vous avez maintenant désactivé les notificaitons";
                 }
-                sendNotificationOnChannel(title, message, CHANNEL_1_ID, NotificationCompat.PRIORITY_LOW);
+                sendNotificationOnChannel(title, message, CHANNEL_1_ID, NotificationCompat.PRIORITY_HIGH);
+
+                final Handler handler = new Handler(Looper.getMainLooper());
+
+                int toCancel = notificationId;
+
+                handler.postDelayed(() -> cancelNotification(getApplicationContext(), toCancel), 5000);
             }
         });
 
@@ -115,15 +126,34 @@ public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnC
     }
     private void sendNotificationOnChannel(String title, String content, String channelId, int priority) {
         Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.notif);
+        ++notificationId;
         NotificationCompat.Builder notification = new NotificationCompat.Builder(this, channelId)
                 .setContentTitle(title)
-                .setContentText("id=" + ++notificationId + " - " + content)
+                .setContentText(content)
                 .setPriority(priority)
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
-                .setStyle(new NotificationCompat.BigPictureStyle().bigPicture(bitmap)) ;
+                .setStyle(new NotificationCompat.BigPictureStyle().bigPicture(bitmap))
+                .setVisibility(NotificationCompat.VISIBILITY_PUBLIC);
 
         notification.setSmallIcon( R.drawable.channel3 );
         NotificationManagerCompat.from(this).notify( notificationId, notification.build() );
+    }
+
+    public static void cancelNotification(Context ctx, int notifyId) {
+        String ns = Context.NOTIFICATION_SERVICE;
+        NotificationManager nMgr = (NotificationManager) ctx.getSystemService(ns);
+        nMgr.cancel(notifyId);
+    }
+
+    public void setNotifs(boolean b) {
+        Log.d("notifs", "J'enregistre :" + b);
+        prefs.edit().putBoolean("Fridge notifs", b).apply();
+    }
+
+    public boolean retrieveNotifs() {
+        boolean b = prefs.getBoolean("Fridge notifs", false);
+        Log.d("notifs", "Je reprends : " + b);
+        return b;
     }
 
 }

@@ -27,7 +27,7 @@ public class Notification extends Application {
     private void createNotificationChannels() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {  // Créer le NotificationChannel, seulement pour API 26+
             NotificationChannel channel1 = createNotificationChannel(CHANNEL_1_ID,"Channel 1",
-                    NotificationManager.IMPORTANCE_LOW,"This Channel has low priority");
+                    NotificationManager.IMPORTANCE_HIGH,"This Channel has low priority");
 
             // Enregister le canal sur le système : attention de ne plus rien modifier après
             NotificationManager manager = getSystemService(NotificationManager.class);
