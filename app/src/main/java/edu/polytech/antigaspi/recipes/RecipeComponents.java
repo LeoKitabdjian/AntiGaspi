@@ -1,5 +1,7 @@
 package edu.polytech.antigaspi.recipes;
 
+import android.content.SharedPreferences;
+
 import java.util.ArrayList;
 
 import edu.polytech.antigaspi.factories.SaltFactory;
@@ -15,6 +17,14 @@ public class RecipeComponents extends ArrayList<RecipeComponent> {
         add(new RecipeComponent(saltFactory.buildIngredient("Tomate"), 2));
         add(new RecipeComponent(sweetFactory.buildIngredient("Pomme"), 5));
         add(new RecipeComponent(sweetFactory.buildIngredient("Banane"), 3));
+    }
+
+    public static void addComponent(RecipeComponent recipeComponent) {
+        recipeComponents.add(recipeComponent);
+    }
+
+    public static void replaceInstance(RecipeComponents recipeComponents) {
+        RecipeComponents.recipeComponents = recipeComponents;
     }
 
     public static RecipeComponents getInstance() {

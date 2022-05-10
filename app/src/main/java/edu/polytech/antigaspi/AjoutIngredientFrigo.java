@@ -18,12 +18,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.gson.Gson;
+
 import edu.polytech.antigaspi.fragments.PhotoFragment;
 import edu.polytech.antigaspi.ingredients.SaltIngredient;
 import edu.polytech.antigaspi.mainActivities.MonFrigo;
 import edu.polytech.antigaspi.recipes.RecipeComponent;
 import edu.polytech.antigaspi.recipes.RecipeComponents;
 
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -91,8 +94,18 @@ public class AjoutIngredientFrigo extends AppCompatActivity {
             if (name.getText().toString().length() != 0 && quantity.getText().toString().length() != 0 && date.getText().toString().length() != 0) {
                 prefs.edit().remove("Ingredient name").apply();
                 prefs.edit().remove("Ingredient quantity").apply();
-                RecipeComponents.getInstance().add(new RecipeComponent(new SaltIngredient(name.getText().toString()),
+                RecipeComponents.addComponent(new RecipeComponent(new SaltIngredient(name.getText().toString()),
                         Integer.parseInt(quantity.getText().toString())));
+                name.setText("");
+                quantity.setText("");
+                //prefs.edit().putString("Liste", new Gson().toJson(RecipeComponents.getInstance())).apply();
+                try {
+                    prefs.edit().putString("Liste", ObjectSerializer.serialize(RecipeComponents.getInstance())).apply();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                Log.d("liste 2", prefs.getString("Liste", ""));
                 Intent intent = new Intent(AjoutIngredientFrigo.this, MonFrigo.class);
                 startActivity(intent);
             }

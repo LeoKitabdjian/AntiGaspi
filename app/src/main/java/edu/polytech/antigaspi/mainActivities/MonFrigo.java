@@ -25,6 +25,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import java.io.IOException;
 import java.util.Map;
 import android.widget.TextView;
 
@@ -34,11 +35,15 @@ import java.util.Set;
 
 import edu.polytech.antigaspi.AjoutIngredientFrigo;
 import edu.polytech.antigaspi.GlobalParams;
+import edu.polytech.antigaspi.ObjectSerializer;
 import edu.polytech.antigaspi.QuantiteIngredient;
 import edu.polytech.antigaspi.R;
 import edu.polytech.antigaspi.RecipeComponentAdapter;
+import edu.polytech.antigaspi.recipes.RecipeComponents;
 
 import static edu.polytech.antigaspi.Notification.CHANNEL_1_ID;
+
+import com.google.gson.Gson;
 
 public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnClickListener {
 
@@ -67,6 +72,17 @@ public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnC
         prefs = this.getSharedPreferences("fridge", Context.MODE_PRIVATE);
         createLinks(R.mipmap.fridge_icon, "Mon Frigo");
         handleNotifs();
+
+        SharedPreferences prefs2 = this.getSharedPreferences("add_ingredient", MODE_PRIVATE);
+        String listIngredients = prefs2.getString("Liste", "");
+        if (!listIngredients.equals("")) {
+            Log.d("Liste", listIngredients);
+            try {
+                RecipeComponents.replaceInstance((RecipeComponents) ObjectSerializer.deserialize(listIngredients));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
         quantiteIngredient = new QuantiteIngredient();
         quantiteIngredient.addObserver(this);
