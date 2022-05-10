@@ -3,6 +3,7 @@ package edu.polytech.antigaspi.mainActivities;
 
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -17,6 +18,7 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
@@ -66,11 +68,11 @@ public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnC
                 String message="";
                 if(retrieveNotifs()) {
                     title = "Notification activée";
-                    message = "Vous avez maintenant activé les notificaitons";
+                    message = "Vous avez maintenant activé les notifications";
                 }
                 else{
-                    title = "Notification desactivée";
-                    message = "Vous avez maintenant désactivé les notificaitons";
+                    title = "Notification désactivée";
+                    message = "Vous avez maintenant désactivé les notifications";
                 }
                 sendNotificationOnChannel(title, message, CHANNEL_1_ID, NotificationCompat.PRIORITY_HIGH);
 
@@ -108,7 +110,25 @@ public class MonFrigo extends ActivitesPrincipales implements Observer, View.OnC
                 break;
 
             case R.id.button2:
-                quantiteIngredient.setValueMinus1(0);
+                if (quantiteIngredient.getValueAtIndex(0)>1) {
+                    quantiteIngredient.setValueMinus1(0);}
+                else{
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    builder.setMessage("Are you sure you want to exit?")
+                            .setCancelable(false)
+                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    MonFrigo.this.finish();
+                                }
+                            })
+                            .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+                    AlertDialog alert = builder.create();
+                    alert.show();
+                }
                 break;
             case R.id.btnAjoutIngredient:
                 Intent intent = new Intent(MonFrigo.this, AjoutIngredientFrigo.class);

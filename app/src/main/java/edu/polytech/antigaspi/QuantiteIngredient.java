@@ -1,36 +1,39 @@
 package edu.polytech.antigaspi;
 
+import android.content.DialogInterface;
+
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Observable;
+import androidx.appcompat.app.AlertDialog;
+
+import edu.polytech.antigaspi.mainActivities.MonFrigo;
+import edu.polytech.antigaspi.recipes.RecipeComponent;
+import edu.polytech.antigaspi.recipes.RecipeComponents;
+
 
 public class QuantiteIngredient extends Observable {
 
-    private java.util.List<Integer> List;
+    private ArrayList<RecipeComponent> list;
 
     // constructor to initialize the list
     public QuantiteIngredient(){
-        List = new ArrayList<Integer>(3);
-
-        List.add(0);
-        List.add(0);
-        List.add(0);
+        list = RecipeComponents.getInstance();
     }
 
     public int getValueAtIndex(final int the_index) throws IndexOutOfBoundsException{
-        return List.get(the_index);
+        return list.get(the_index).getQuantite();
     }
 
     // function to make changes in the activity button's
     // count value when user touch it
     public void setValuePlus1(final int the_index) throws IndexOutOfBoundsException{
-        List.set(the_index,List.get(the_index) + 1);
+        list.get(the_index).setQuantite(list.get(the_index).getQuantite()+1);
         setChanged();
         notifyObservers();
     }
     public void setValueMinus1(final int the_index) throws IndexOutOfBoundsException {
-        if (List.get(the_index)>0){
-            List.set(the_index, List.get(the_index) - 1);
+        if (list.get(the_index).getQuantite()>1){
+            list.get(the_index).setQuantite(list.get(the_index).getQuantite()-1);
             setChanged();
             notifyObservers();
         }

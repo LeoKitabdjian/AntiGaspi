@@ -24,12 +24,12 @@ public class TipActivity extends ActivitesPrincipales {
         ((TextView)findViewById( R.id.IngredientName)).setText(tip.getIngredient().toString());
         ((TextView)findViewById( R.id.ContenuTip)).setText(tip.getContenuTip());
 
-        ((Button)findViewById(R.id.button)).setOnClickListener( click -> {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("TIP");
-            builder.setMessage("Vous avez cliqué sur : " + tip);
-            builder.setNeutralButton("OK", null);
-            builder.show();
-        });
+//        ((Button)findViewById(R.id.button)).setOnClickListener( click -> {
+//            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//            builder.setTitle("TIP");
+//            builder.setMessage("Vous avez cliqué sur : " + tip);
+//            builder.setNeutralButton("OK", null);
+//            builder.show();
+//        });
     }
 }

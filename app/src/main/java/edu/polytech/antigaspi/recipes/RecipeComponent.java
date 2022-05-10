@@ -11,4 +11,19 @@ public class RecipeComponent {
         this.quantite = quantite;
     }
 
+    public Ingredient getIngredient() {
+        return ingredient;
+    }
+
+    public int getQuantite() {
+        return quantite;
+    }
+
+    public void setIngredient(Ingredient ingredient) {
+        this.ingredient = ingredient;
+    }
+
+    public void setQuantite(int quantite) {
+        this.quantite = quantite;
+    }
 }
