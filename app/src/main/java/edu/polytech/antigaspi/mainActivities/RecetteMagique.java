@@ -51,6 +51,6 @@ public class RecetteMagique extends ActivitesPrincipales implements Observer, Vi
 
         @Override
         public void update(Observable arg0, Object arg1) {
-                NbPers.setText("NbPersonne : "+ nbPers.getValueAtIndex(0));
+                NbPers.setText("Nombre de Personne(s) : "+ nbPers.getValueAtIndex(0));
         }
 }

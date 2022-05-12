@@ -37,8 +37,8 @@
                 android:id="@+id/nbpers"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:layout_marginStart="150dp"
-                android:text="NbPersonne : 0"
+                android:layout_marginStart="40dp"
+                android:text="Nombre de Personne : 0"
                 android:textSize="20sp" />
 
             <Button
